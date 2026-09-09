@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type { ReactNode } from "react";
-import { ArrowRight, CalendarDays, Linkedin, Menu, Slack } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // No head() here: the home route inherits title/description/og/twitter from
@@ -52,8 +51,4 @@ function Index() {
       </section>
     </main>
   );
-}
-
-function AppIcon({ className, label, children }: { className: string; label: string; children: ReactNode }) {
-  return <div className={`absolute flex size-16 flex-col items-center justify-center rounded-md border border-border bg-muted text-foreground shadow-xl md:size-20 ${className}`}>{children}<span className="mt-1 text-[7px] font-bold uppercase text-primary">{label}</span></div>;
 }

@@ -10,12 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as ApiStatusRouteImport } from './routes/api/status'
+import { Route as ApiTtsRouteImport } from './routes/api/tts'
 import { Route as ApiGoogleStartRouteImport } from './routes/api/google/start'
 import { Route as ApiPublicGoogleCallbackRouteImport } from './routes/api/public/google/callback'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStatusRoute = ApiStatusRouteImport.update({
+  id: '/api/status',
+  path: '/api/status',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiTtsRoute = ApiTtsRouteImport.update({
+  id: '/api/tts',
+  path: '/api/tts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiGoogleStartRoute = ApiGoogleStartRouteImport.update({
@@ -31,30 +49,61 @@ const ApiPublicGoogleCallbackRoute = ApiPublicGoogleCallbackRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/chat': typeof ApiChatRoute
+  '/api/status': typeof ApiStatusRoute
+  '/api/tts': typeof ApiTtsRoute
   '/api/google/start': typeof ApiGoogleStartRoute
   '/api/public/google/callback': typeof ApiPublicGoogleCallbackRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/chat': typeof ApiChatRoute
+  '/api/status': typeof ApiStatusRoute
+  '/api/tts': typeof ApiTtsRoute
   '/api/google/start': typeof ApiGoogleStartRoute
   '/api/public/google/callback': typeof ApiPublicGoogleCallbackRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/chat': typeof ApiChatRoute
+  '/api/status': typeof ApiStatusRoute
+  '/api/tts': typeof ApiTtsRoute
   '/api/google/start': typeof ApiGoogleStartRoute
   '/api/public/google/callback': typeof ApiPublicGoogleCallbackRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/google/start' | '/api/public/google/callback'
+  fullPaths:
+    | '/'
+    | '/api/chat'
+    | '/api/status'
+    | '/api/tts'
+    | '/api/google/start'
+    | '/api/public/google/callback'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/google/start' | '/api/public/google/callback'
-  id: '__root__' | '/' | '/api/google/start' | '/api/public/google/callback'
+  to:
+    | '/'
+    | '/api/chat'
+    | '/api/status'
+    | '/api/tts'
+    | '/api/google/start'
+    | '/api/public/google/callback'
+  id:
+    | '__root__'
+    | '/'
+    | '/api/chat'
+    | '/api/status'
+    | '/api/tts'
+    | '/api/google/start'
+    | '/api/public/google/callback'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiChatRoute: typeof ApiChatRoute
+  ApiStatusRoute: typeof ApiStatusRoute
+  ApiTtsRoute: typeof ApiTtsRoute
   ApiGoogleStartRoute: typeof ApiGoogleStartRoute
   ApiPublicGoogleCallbackRoute: typeof ApiPublicGoogleCallbackRoute
 }
@@ -66,6 +115,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/status': {
+      id: '/api/status'
+      path: '/api/status'
+      fullPath: '/api/status'
+      preLoaderRoute: typeof ApiStatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tts': {
+      id: '/api/tts'
+      path: '/api/tts'
+      fullPath: '/api/tts'
+      preLoaderRoute: typeof ApiTtsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/google/start': {
@@ -87,6 +157,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiChatRoute: ApiChatRoute,
+  ApiStatusRoute: ApiStatusRoute,
+  ApiTtsRoute: ApiTtsRoute,
   ApiGoogleStartRoute: ApiGoogleStartRoute,
   ApiPublicGoogleCallbackRoute: ApiPublicGoogleCallbackRoute,
 }

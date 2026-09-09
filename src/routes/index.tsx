@@ -30,7 +30,7 @@ function Index() {
           {['Product', 'Solutions', 'Integrations', 'Resources', 'Our story'].map((item) => <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="transition-colors hover:text-foreground">{item}</a>)}
         </nav>
         <Button asChild className="hidden md:inline-flex"><a href="#get-started">Get started <ArrowRight size={16} /></a></Button>
-        <button aria-label="Open navigation" className="grid size-10 place-items-center text-foreground md:hidden"><Menu size={24} /></button>
+        <Button aria-label="Open navigation" variant="outline" className="size-10 px-0 md:hidden"><Menu size={21} /></Button>
       </header>
 
       <section className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] max-w-7xl flex-col items-center px-5 pb-8 pt-12 text-center md:pt-5">

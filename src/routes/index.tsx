@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type { ReactNode } from "react";
-import { ArrowRight, CalendarDays, Linkedin, Menu, Slack } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // No head() here: the home route inherits title/description/og/twitter from
@@ -43,22 +42,13 @@ function Index() {
         </div>
         <p className="mt-4 text-[9px] font-bold uppercase text-primary">One agent. &nbsp; Five apps. &nbsp; Endless possibilities.</p>
 
-        <div aria-hidden="true" className="flow-drift relative mt-10 h-64 w-[115%] max-w-5xl md:mt-2 md:h-80">
-          <svg viewBox="0 0 1000 300" className="absolute inset-0 size-full opacity-90" fill="none">
+        <div aria-hidden="true" className="flow-drift relative mt-10 h-48 w-full max-w-5xl sm:h-64 md:mt-4 md:h-80">
+          <svg viewBox="0 0 1000 300" preserveAspectRatio="none" className="absolute inset-0 size-full opacity-90" fill="none">
             {[-36,-18,0,18,36].map((offset) => <path key={offset} d={`M0 ${155+offset} C180 ${15+offset}, 270 ${265+offset}, 485 ${145+offset} S790 ${245+offset}, 1000 ${85+offset}`} stroke="currentColor" className="text-primary" strokeWidth="1" strokeDasharray={offset % 36 === 0 ? "2 7" : "1 4"} opacity={offset === 0 ? ".9" : ".45"} />)}
           </svg>
-          <AppIcon className="left-[7%] top-[18%]" label="Gmail"><span className="text-xl font-bold text-primary">M</span></AppIcon>
-          <AppIcon className="left-[19%] bottom-[4%]" label="Notion"><span className="border border-foreground px-1 font-display text-xl">N</span></AppIcon>
-          <AppIcon className="right-[15%] top-[8%]" label="Calendar"><CalendarDays size={24} /></AppIcon>
-          <AppIcon className="right-[3%] top-[44%]" label="Slack"><Slack size={25} /></AppIcon>
-          <AppIcon className="right-[18%] bottom-[0%]" label="LinkedIn"><Linkedin size={25} /></AppIcon>
         </div>
         <div className="mt-auto flex w-full items-center gap-4 pt-4 text-[9px] font-bold uppercase text-muted-foreground"><span className="h-px flex-1 bg-border" /><span className="text-primary">Built for modern professionals</span><span className="h-px flex-1 bg-border" /></div>
       </section>
     </main>
   );
-}
-
-function AppIcon({ className, label, children }: { className: string; label: string; children: ReactNode }) {
-  return <div className={`absolute flex size-16 flex-col items-center justify-center rounded-md border border-border bg-muted text-foreground shadow-xl md:size-20 ${className}`}>{children}<span className="mt-1 text-[7px] font-bold uppercase text-primary">{label}</span></div>;
 }

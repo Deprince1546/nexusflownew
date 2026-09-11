@@ -156,6 +156,16 @@
   animation: flow-drift 8s ease-in-out infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .flow-drift { animation: none; }
+@keyframes orb-pulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.06); filter: brightness(1.15); }
 }
+
+@utility orb-pulse {
+  animation: orb-pulse 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-drift, .orb-pulse { animation: none; }
+}
+

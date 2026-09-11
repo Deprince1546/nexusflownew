@@ -61,7 +61,7 @@ function PricingPage() {
                 ))}
               </ul>
 
-              <Button asChild variant={plan.featured ? "default" : "outline"} className="mt-7 w-full">
+              <Button asChild variant={plan.featured ? "primary" : "outline"} className="mt-7 w-full">
                 <Link to={plan.name === "Team" ? "/contact" : "/app"}>
                   {plan.cta} <ArrowRight size={16} />
                 </Link>

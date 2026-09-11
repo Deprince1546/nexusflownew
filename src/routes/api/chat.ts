@@ -33,7 +33,7 @@ export const Route = createFileRoute("/api/chat")({
         const result = streamText({
           model: openrouter("anthropic/claude-sonnet-4.5"),
           system: `${SYSTEM_PROMPT}\nCurrent time: ${new Date().toISOString()}`,
-          messages: convertToModelMessages(messages),
+          messages: await convertToModelMessages(messages),
           tools: buildTools(request),
           stopWhen: stepCountIs(50),
           onError: ({ error }) => console.error("chat error", error),

@@ -71,6 +71,7 @@ export function useWakeWord(options: {
     recognition.onresult = (event) => {
       for (let i = event.resultIndex; i < event.results.length; i++) {
         const result = event.results[i];
+        if (!result) continue;
         const transcript = normalize(result[0]?.transcript ?? "");
         if (!transcript) continue;
 

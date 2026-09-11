@@ -1,7 +1,7 @@
 const ORB_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260816_125506_3a597378-ec85-4ebd-bd22-03b45508ac62.mp4";
 
-export function Orb({ active, caption }: { active: boolean; caption?: string }) {
+export function Orb({ active, caption }: { active: boolean; caption?: string | undefined }) {
   if (!active) return null;
 
   return (

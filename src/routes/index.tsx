@@ -37,9 +37,10 @@ function Index() {
         <h1 className="max-w-4xl font-display text-[clamp(3.3rem,9vw,7.5rem)] leading-[0.86] text-primary">Your digital work,<br />connected.</h1>
         <p className="mt-7 max-w-xl text-base leading-7 text-muted-foreground md:text-lg">NexusFlow is an intelligent AI agent that plans,<br className="hidden sm:block" /> executes and connects your work across all your apps.</p>
         <div id="get-started" className="mt-7 flex w-full max-w-sm flex-col justify-center gap-3 sm:max-w-none sm:flex-row">
-          <Button>Get started <ArrowRight size={17} /></Button>
-          <Button variant="outline">See how it works <ArrowRight size={17} /></Button>
+          <Button asChild><a href="/app">Open the agent <ArrowRight size={17} /></a></Button>
+          <Button variant="outline" asChild><a href="/app">See how it works <ArrowRight size={17} /></a></Button>
         </div>
+
         <p className="mt-4 text-[9px] font-bold uppercase text-primary">One agent. &nbsp; Five apps. &nbsp; Endless possibilities.</p>
 
         <div aria-hidden="true" className="flow-drift relative mt-10 h-48 w-full max-w-5xl sm:h-64 md:mt-4 md:h-80">

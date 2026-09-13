@@ -27,7 +27,7 @@ export function PageShell({ children }: { children: ReactNode }) {
 export function PageHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle: string }) {
   return (
     <div className="mx-auto max-w-3xl px-5 pt-10 text-center md:px-10 md:pt-16">
-      <p className="text-[10px] font-bold uppercase text-primary md:text-xs">● &nbsp; {eyebrow} &nbsp; ●</p>
+      <p className="flex items-center justify-center text-[10px] font-bold uppercase tracking-wide text-primary md:text-xs"><span>●</span> <span className="px-2">{eyebrow}</span> <span>●</span></p>
       <h1 className="mt-4 font-display text-[clamp(2.6rem,7vw,4.8rem)] leading-[0.92] text-primary">{title}</h1>
       <p className="mt-5 text-base leading-7 text-muted-foreground md:text-lg">{subtitle}</p>
     </div>

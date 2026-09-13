@@ -36,7 +36,7 @@ function PricingPage() {
           {PLANS.map((plan) => (
             <article
               key={plan.name}
-              className={`flex flex-col rounded-xl border bg-muted/60 p-7 backdrop-blur ${
+              className={`flex flex-col rounded-xl border bg-card/85 p-7 backdrop-blur ${
                 plan.featured ? "border-primary shadow-[0_0_50px_rgba(200,40,40,0.18)]" : "border-border"
               }`}
             >

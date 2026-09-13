@@ -27,8 +27,9 @@ function Index() {
   return (
     <PageShell>
       <section className="mx-auto flex max-w-7xl flex-col items-center px-5 pb-10 pt-10 text-center md:px-10 md:pt-4">
-        <p className="mb-5 text-[10px] font-bold uppercase text-primary md:text-xs">
-          ● &nbsp; AI agent &nbsp; ● &nbsp; Multi-app &nbsp; ● &nbsp; Real actions &nbsp; ●
+        <p className="mb-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[10px] font-bold uppercase tracking-wide text-primary md:text-xs">
+          <span>●</span><span>AI agent</span><span>●</span><span>Multi-app</span><span>●</span>
+          <span>Real actions</span><span>●</span>
         </p>
         <h1 className="max-w-4xl font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.86] text-primary">
           Your digital work,
@@ -53,25 +54,11 @@ function Index() {
           </Button>
         </div>
 
-        <p className="mt-4 text-[9px] font-bold uppercase text-primary">
-          One agent. &nbsp; Five apps. &nbsp; Endless possibilities.
+        <p className="mt-4 flex flex-wrap justify-center gap-x-3 text-[9px] font-bold uppercase tracking-wide text-primary">
+          <span>One agent.</span><span>Five apps.</span><span>Endless possibilities.</span>
         </p>
 
-        <div aria-hidden="true" className="flow-drift relative mt-10 h-40 w-full max-w-5xl sm:h-56 md:h-72">
-          <svg viewBox="0 0 1000 300" preserveAspectRatio="none" className="absolute inset-0 size-full opacity-90" fill="none">
-            {[-36, -18, 0, 18, 36].map((offset) => (
-              <path
-                key={offset}
-                d={`M0 ${155 + offset} C180 ${15 + offset}, 270 ${265 + offset}, 485 ${145 + offset} S790 ${245 + offset}, 1000 ${85 + offset}`}
-                stroke="currentColor"
-                className="text-primary"
-                strokeWidth="1"
-                strokeDasharray={offset % 36 === 0 ? "2 7" : "1 4"}
-                opacity={offset === 0 ? ".9" : ".45"}
-              />
-            ))}
-          </svg>
-        </div>
+        <div className="h-56 w-full sm:h-72 md:h-96" />
 
         <div className="flex w-full items-center gap-4 pt-4 text-[9px] font-bold uppercase text-muted-foreground">
           <span className="h-px flex-1 bg-border" />
@@ -95,7 +82,7 @@ function Index() {
           {FEATURES.slice(0, 6).map((feature) => (
             <article
               key={feature.title}
-              className="rounded-xl border border-border bg-muted/60 p-6 backdrop-blur transition-colors hover:border-ring"
+              className="rounded-xl border border-border bg-card/85 p-6 backdrop-blur transition-colors hover:border-ring"
             >
               <feature.icon size={22} className="text-primary" />
               <h3 className="mt-4 font-display text-2xl text-foreground">{feature.title}</h3>

@@ -11,9 +11,10 @@ export function SiteBackground() {
         muted
         playsInline
         preload="auto"
-        className="size-full object-cover opacity-70"
+        className="size-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90" />
+      <div className="absolute inset-0 bg-background/35" />
+
     </div>
   );
 }

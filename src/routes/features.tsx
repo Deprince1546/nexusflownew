@@ -44,7 +44,7 @@ function FeaturesPage() {
           {FEATURES.map((feature) => (
             <article
               key={feature.title}
-              className="rounded-xl border border-border bg-muted/60 p-6 backdrop-blur transition-colors hover:border-ring"
+              className="rounded-xl border border-border bg-card/85 p-6 backdrop-blur transition-colors hover:border-ring"
             >
               <feature.icon size={22} className="text-primary" />
               <h2 className="mt-4 font-display text-2xl text-foreground">{feature.title}</h2>
@@ -53,7 +53,7 @@ function FeaturesPage() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-xl border border-border bg-muted/60 p-6 backdrop-blur md:p-10">
+        <div className="mt-14 rounded-xl border border-border bg-card/85 p-6 backdrop-blur md:p-10">
           <h2 className="font-display text-3xl text-primary md:text-4xl">How a request runs</h2>
           <ul className="mt-6 grid gap-3 md:grid-cols-2">
             {STEPS.map((step) => (

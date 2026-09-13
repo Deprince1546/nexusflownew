@@ -39,7 +39,7 @@ function ContactPage() {
             event.preventDefault();
             setSent(true);
           }}
-          className="rounded-xl border border-border bg-muted/60 p-6 backdrop-blur md:p-8"
+          className="rounded-xl border border-border bg-card/85 p-6 backdrop-blur md:p-8"
         >
           {sent ? (
             <div className="py-10 text-center">
@@ -73,12 +73,12 @@ function ContactPage() {
         </form>
 
         <aside className="space-y-4">
-          <div className="rounded-xl border border-border bg-muted/60 p-6 backdrop-blur">
+          <div className="rounded-xl border border-border bg-card/85 p-6 backdrop-blur">
             <Mail size={20} className="text-primary" />
             <h3 className="mt-3 font-display text-2xl text-foreground">Email</h3>
             <p className="mt-1 text-sm text-muted-foreground">Add your real support address here and we'll show it.</p>
           </div>
-          <div className="rounded-xl border border-border bg-muted/60 p-6 backdrop-blur">
+          <div className="rounded-xl border border-border bg-card/85 p-6 backdrop-blur">
             <MessagesSquare size={20} className="text-primary" />
             <h3 className="mt-3 font-display text-2xl text-foreground">Team rollouts</h3>
             <p className="mt-1 text-sm text-muted-foreground">

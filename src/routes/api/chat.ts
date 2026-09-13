@@ -36,10 +36,15 @@ export const Route = createFileRoute("/api/chat")({
           messages: await convertToModelMessages(messages),
           tools: buildTools(request),
           stopWhen: stepCountIs(50),
+          maxOutputTokens: 1200,
           onError: ({ error }) => console.error("chat error", error),
         });
 
-        return result.toUIMessageStreamResponse();
+        return result.toUIMessageStreamResponse({
+          onError: (error) =>
+            error instanceof Error ? error.message : "The AI service could not be reached. Please try again.",
+        });
+
       },
     },
   },
